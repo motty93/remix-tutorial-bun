@@ -1,5 +1,5 @@
-import { Links, Meta, Scripts } from '@remix-run/react'
-import "./tailwind.css"
+import { Links, Meta, Outlet, Scripts } from '@remix-run/react'
+import './tailwind.css'
 
 export default function App() {
 	return (
@@ -10,7 +10,9 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<main className='p-6'></main>
+				<main className='p-6'>
+					<Outlet />
+				</main>
 				<Scripts />
 			</body>
 		</html>
