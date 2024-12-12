@@ -1,5 +1,6 @@
 import type { LoaderFunction } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
+import { Button } from '~/components/ui/button'
 import type { Post } from '~/types/post'
 
 export const loader: LoaderFunction = async () => {
@@ -27,9 +28,11 @@ export default function Posts() {
 				))}
 			</div>
 			<div className='mt-3'>
-				<Link to='/posts/new' className='border-solid border-2 border-indigo-600'>
-					投稿作成
-				</Link>
+        <Button asChild>
+          <Link to='/posts/new'>
+            投稿作成
+          </Link>
+        </Button>
 			</div>
 		</div>
 	)
