@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "bunx remix vite:build",
-    "dev": "bunx remix vite:dev",
+    "dev": "bunx remix dev",
+    "vite:dev": "bunx remix vite:dev",
     "start": "bunx remix-serve ./build/server/index.js",
     "typecheck": "bunx tsc",
     "lint": "bunx @biomejs/biome lint --write ./app",
@@ -16,9 +17,14 @@
     "@remix-run/node": "^2.15.1",
     "@remix-run/react": "^2.15.1",
     "@remix-run/serve": "^2.15.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "isbot": "^4.1.0",
+    "lucide-react": "^0.468.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
