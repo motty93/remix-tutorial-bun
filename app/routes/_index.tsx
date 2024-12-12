@@ -1,12 +1,5 @@
 import type { MetaFunction } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
-
-export type Post = {
-	id: string
-	title: string
-	body: string
-	userId: string
-}
+import { Link } from '@remix-run/react'
 
 export const meta: MetaFunction = () => {
 	return [
@@ -15,29 +8,13 @@ export const meta: MetaFunction = () => {
 	]
 }
 
-export const loader = async () => {
-	const response = await fetch(
-		'https://jsonplaceholder.typicode.com/posts?_limit=10',
-	)
-	const data: Post[] = await response.json()
-
-	return Response.json({ status: 'success', posts: data })
-}
-
 export default function Index() {
-	const { posts } = useLoaderData<typeof loader>()
 	return (
 		<div>
-			<h1 className='font-bold text-3xl'>投稿一覧</h1>
-			<div>
-				{posts.map((post: Post) => (
-					<div key={post.id} className='border-b border-gray-300 py-4'>
-						<Link to={`/posts/${post.id}`} className='text-blue-600'>
-							{post.title}
-						</Link>
-					</div>
-				))}
-			</div>
+			<h1 className='font-bold text-3xl'>Remix Tutorialです</h1>
+      <div className="mt-3">
+        <Link to='/posts' className="text-blue-600">投稿一覧へ</Link>
+      </div>
 		</div>
 	)
 }

@@ -1,19 +1,19 @@
-import { ActionFunctionArgs } from '@remix-run/node'
+import type { ActionFunctionArgs } from '@remix-run/node'
 import { Form, redirect } from '@remix-run/react'
 
 export const action = async ({ request }: ActionFunctionArgs) => {
-  const formData = await request.formData()
-  const title = formData.get('title')
-  const body = formData.get('body')
+	const formData = await request.formData()
+	const title = formData.get('title')
+	const body = formData.get('body')
 
-  // 投稿完了
-  // 本来であればprismaでDBに保存する処理を書く
-  console.log(title, body)
+	// 投稿完了
+	// 本来であればprismaでDBに保存する処理を書く
+	console.log(title, body)
 
-  return redirect("/")
+	return redirect('/')
 }
 
-export default function New() {
+export default function NewPost() {
 	return (
 		<div>
 			<h1 className='font-bold text-3xl'>投稿作成</h1>
