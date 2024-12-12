@@ -12,6 +12,7 @@
     "lint": "bunx @biomejs/biome lint --write ./app",
     "fmt": "bunx @biomejs/biome format --write ./app",
     "check": "bunx @biomejs/biome check --write ./app",
+    "db:import": "bunx prisma-import",
     "db:migrate": "bunx prisma migrate dev --name init",
     "db:generate": "bunx prisma generate"
   },
@@ -50,5 +51,11 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "prisma": {
+    "import": {
+      "schemas": "./prisma/models/*.prisma",
+      "output": "./prisma/schema.prisma"
+    }
   }
 }
