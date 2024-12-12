@@ -11,7 +11,9 @@
     "typecheck": "bunx tsc",
     "lint": "bunx @biomejs/biome lint --write ./app",
     "fmt": "bunx @biomejs/biome format --write ./app",
-    "check": "bunx @biomejs/biome check --write ./app"
+    "check": "bunx @biomejs/biome check --write ./app",
+    "db:migrate": "bunx prisma migrate dev --name init",
+    "db:generate": "bunx prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
