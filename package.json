@@ -12,6 +12,9 @@
     "lint": "bunx @biomejs/biome lint --write ./app",
     "fmt": "bunx @biomejs/biome format --write ./app",
     "check": "bunx @biomejs/biome check --write ./app",
+    "db:build": "docker compose build",
+    "db:start": "docker compose up -d",
+    "db:volume:down": "docker compose down --volumes",
     "db:import": "bunx prisma-import",
     "db:migrate": "bunx prisma migrate dev --name init",
     "db:generate": "bunx prisma generate"
